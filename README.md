@@ -3,9 +3,11 @@
 
 [![NPM](https://nodei.co/npm/open.png?downloads=true)](https://www.npmjs.com/package/open)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-open/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-open_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-open/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-open/build/screenCapture.buildNpmdoc.browser.%2Fhome%2Ftravis%2Fbuild%2Fnpmdoc%2Fnode-npmdoc-open%2Ftmp%2Fbuild%2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-open/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-open/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-open/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-open/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
