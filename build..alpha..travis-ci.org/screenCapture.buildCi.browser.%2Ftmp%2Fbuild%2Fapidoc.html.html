@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/jjrdn/node-open"
-
-    >open (v0.0.5)</a>
+    <a href="https://github.com/jjrdn/node-open">open (v0.0.5)</a>
 </h1>
 <h4>open a file or url in the user's preferred application</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.open">module open</a><ol>
 
@@ -88,26 +81,26 @@
     <li>description and source-code<pre class="apidocCodePre">function open(target, appName, callback) {
   var opener;
 
-  if (typeof(appName) === &#x27;function&#x27;) {
+  if (typeof(appName) === 'function') {
     callback = appName;
     appName = null;
   }
 
   switch (process.platform) {
-  case &#x27;darwin&#x27;:
+  case 'darwin':
     if (appName) {
-      opener = &#x27;open -a &#x22;&#x27; + escape(appName) + &#x27;&#x22;&#x27;;
+      opener = 'open -a "' + escape(appName) + '"';
     } else {
-      opener = &#x27;open&#x27;;
+      opener = 'open';
     }
     break;
-  case &#x27;win32&#x27;:
+  case 'win32':
     // if the first parameter to start is quoted, it uses that as the title
     // so we pass a blank title so we can quote the file we are opening
     if (appName) {
-      opener = &#x27;start &#x22;&#x22; &#x22;&#x27; + escape(appName) + &#x27;&#x22;&#x27;;
+      opener = 'start "" "' + escape(appName) + '"';
     } else {
-      opener = &#x27;start &#x22;&#x22;&#x27;;
+      opener = 'start ""';
     }
     break;
   default:
@@ -115,15 +108,15 @@
       opener = escape(appName);
     } else {
       // use Portlands xdg-open everywhere else
-      opener = path.join(__dirname, &#x27;../vendor/xdg-open&#x27;);
+      opener = path.join(__dirname, '../vendor/xdg-open');
     }
     break;
   }
 
   if (process.env.SUDO_USER) {
-    opener = &#x27;sudo -u &#x27; + process.env.SUDO_USER + &#x27; &#x27; + opener;
+    opener = 'sudo -u ' + process.env.SUDO_USER + ' ' + opener;
   }
-  return exec(opener + &#x27; &#x22;&#x27; + escape(target) + &#x27;&#x22;&#x27;, callback);
+  return exec(opener + ' "' + escape(target) + '"', callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -137,3 +130,4 @@
     ]
 </div>
 </div>
+</body></html>

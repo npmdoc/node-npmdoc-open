@@ -61,12 +61,73 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.open">module open</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.open.open">
+            function <span class="apidocSignatureSpan"></span>open
+            <span class="apidocSignatureSpan">(target, appName, callback)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.open" id="apidoc.module.open">module open</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.open.open" id="apidoc.element.open.open">
+        function <span class="apidocSignatureSpan"></span>open
+        <span class="apidocSignatureSpan">(target, appName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function open(target, appName, callback) {
+  var opener;
+
+  if (typeof(appName) === &#x27;function&#x27;) {
+    callback = appName;
+    appName = null;
+  }
+
+  switch (process.platform) {
+  case &#x27;darwin&#x27;:
+    if (appName) {
+      opener = &#x27;open -a &#x22;&#x27; + escape(appName) + &#x27;&#x22;&#x27;;
+    } else {
+      opener = &#x27;open&#x27;;
+    }
+    break;
+  case &#x27;win32&#x27;:
+    // if the first parameter to start is quoted, it uses that as the title
+    // so we pass a blank title so we can quote the file we are opening
+    if (appName) {
+      opener = &#x27;start &#x22;&#x22; &#x22;&#x27; + escape(appName) + &#x27;&#x22;&#x27;;
+    } else {
+      opener = &#x27;start &#x22;&#x22;&#x27;;
+    }
+    break;
+  default:
+    if (appName) {
+      opener = escape(appName);
+    } else {
+      // use Portlands xdg-open everywhere else
+      opener = path.join(__dirname, &#x27;../vendor/xdg-open&#x27;);
+    }
+    break;
+  }
+
+  if (process.env.SUDO_USER) {
+    opener = &#x27;sudo -u &#x27; + process.env.SUDO_USER + &#x27; &#x27; + opener;
+  }
+  return exec(opener + &#x27; &#x22;&#x27; + escape(target) + &#x27;&#x22;&#x27;, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
