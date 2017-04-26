@@ -1,6 +1,6 @@
 # npmdoc-open
 
-#### api documentation for  [open (v0.0.5)](https://github.com/jjrdn/node-open)  [![npm package](https://img.shields.io/npm/v/npmdoc-open.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-open) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-open.svg)](https://travis-ci.org/npmdoc/node-npmdoc-open)
+#### basic api documentation for  [open (v0.0.5)](https://github.com/jjrdn/node-open)  [![npm package](https://img.shields.io/npm/v/npmdoc-open.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-open) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-open.svg)](https://travis-ci.org/npmdoc/node-npmdoc-open)
 
 #### open a file or url in the user's preferred application
 
@@ -73,7 +73,8 @@
     "scripts": {
         "test": "node_modules/mocha/bin/mocha"
     },
-    "version": "0.0.5"
+    "version": "0.0.5",
+    "bin": {}
 }
 ```
 
